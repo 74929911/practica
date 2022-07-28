@@ -9,15 +9,16 @@ items.addEventListener("click", (e) => {
     if (e.target.textContent == random) {
         Swal.fire({
             imageUrl: './image.jpg',
-            imageWidth: 400,
-            imageHeight: 400,
-            imageAlt: 'A tall image'
+            imageWidth: 450,
+            imageHeight: 450,
+            imageAlt: 'A tall image',
+            showConfirmButton:false,
         })
         audio.load();
         audio.play();
         e.target.style.border="5px solid yellow"
         setTimeout(() => {
-            audio_bad.play()
+            audio_bad.play();
         }, 1500);
     } else {
         Swal.fire({
