@@ -1,20 +1,33 @@
 const items = document.getElementById("items");
-const audio = new Audio("./sonido.mp3")
-let i = 0;
+const elementos = document.querySelectorAll("#items .item");
+const random = Math.round(Math.random() * items.children.length);
+const audio = new Audio("./Esta_Si.mp3")
+const audio2 = new Audio("./Esta_no.mp3")
+const audio_bad = new Audio("./El gatito_tuyo_te_perdio.mp3")
+// let i = 0;
 items.addEventListener("click", (e) => {
-    if (i == 0) {
-        audio.load()
+    if (e.target.textContent == random) {
+        Swal.fire({
+            imageUrl: './image.jpg',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'A tall image'
+        })
+        audio.load();
         audio.play();
-        i = 1;
+        e.target.style.border="5px solid yellow"
+        setTimeout(() => {
+            audio_bad.play()
+        }, 1500);
     } else {
-        audio.load()
-        audio.play();
-        i = 0;
+        Swal.fire({
+            imageUrl: './oso.gif',
+            imageWidth: 400,
+            imageHeight: 400,
+            imageAlt: 'A tall image'
+        })
+        e.target.style.opacity = "0";
+        audio2.load();
+        audio2.play();
     }
-    Swal.fire({
-        imageUrl: './image.jpg',
-        imageWidth: 400,
-        imageHeight: 400,
-        imageAlt: 'A tall image'
-    })
 })

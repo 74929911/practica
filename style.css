@@ -1,44 +1,27 @@
 .items{
+    perspective: 800px;
     width: 100vw;
     height: 100vh;
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-template-rows: repeat(3,1fr);
-    grid-gap: 5px;
+    grid-gap: 2px;
     user-select: none;
     transform: scale(0.9);
     }
-.item_one,.item_two,.item_three,.item_fourth,.item_five,.item_six,.item_seven,.item_eight,.item_nine{
+.item{
     width: 100%;
     height: 100%;
-    background-color: aquamarine;
-    /* border: 1px solid black; */
-    /* animation-name: girar; */
-    /* animation-timing-function: ease-in-out;
-    animation-duration: 1s;
-    animation-direction: normal; */
-    background-blend-mode: multiply; 
+    cursor: pointer;
+    border-radius: 5px;
+    background: aquamarine;
     background-size: cover;
     background-position: center center;
     cursor: pointer;
+    color:aquamarine;
+     background-image: url("./calavera.png");
 }
-/* @keyframes girar {
-   to{
-        transform: scale(1.1);
-    }
-} */
-.item_one:hover,
-.item_two:hover,
-.item_three:hover,
-.item_fourth:hover,
-.item_five:hover,
-.item_six:hover,
-.item_seven:hover,
-.item_eight:hover,
-.item_nine:hover{
-    background-color: rgb(255, 255, 255);
-    background-image: url("./image.jpg");
-}
+
 *{
     margin: 0;
     padding: 0;
